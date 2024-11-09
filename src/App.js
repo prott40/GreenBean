@@ -1,3 +1,5 @@
+// origianl file
+/*
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,6 +22,23 @@ function App() {
       </header>
     </div>
   );
+}
+
+export default App;
+*/
+// new file - puts app on github web
+import React from "react";
+import Form from './Form';
+import './Form.css';
+
+function App() {
+  return (
+    <div className="App">
+       <Form />
+    </div>
+
+  )
+    
 }
 
 export default App;
