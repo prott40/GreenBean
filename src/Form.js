@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 export default function Form() {
   const [fields, setFields] = useState([{ id: 1, value: '' }]); // Initial field
   const [showNewForm, setShowNewForm] = useState(false); // State to control which form to display
-  const [itemName, setItemName] = useState(''); // State to store the item name for the new form
-
+  const [itemName, setItemName] = useState(''); // State to store the item name for the newform
+  const [name, setName] = useState(''); // State to store the name
+  const [email, setEmail] = useState(''); // State to store the email
+  
   const addField = () => {
     setFields([...fields, { id: fields.length + 1, value: '' }]);
   };
@@ -24,7 +26,13 @@ export default function Form() {
   };
 
   return (
+    
     <div className="form-container">
+      {/* Box displaying Name and Email */}
+      <div className="info-box">
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Email:</strong> {email}</p>
+      </div>
       {!showNewForm ? (
         // The initial form
         <form className="form-content">
@@ -78,7 +86,7 @@ export default function Form() {
               <input type="text" name="newInfo" />
             </label>
           </div>
-
+          
           <div className="button-container">
             <div className="button-wrapper">
               <button type="button" onClick={() => setShowNewForm(false)} className="finding-button">
