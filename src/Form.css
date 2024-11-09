@@ -57,7 +57,6 @@ input {
 }
 
 .add-field-button {
-  margin-top: 20px;
   padding: 8px 12px;
   background-color: #45a049; /* Green background */
   color: white;
@@ -71,7 +70,6 @@ input {
 }
 
 .submit-button {
-  margin-top: 20px;
   padding: 8px 12px;
   background-color: #45a049;
   color: white;
