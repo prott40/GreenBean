@@ -23,6 +23,7 @@ export default function Form() {
     const firstItemValue = fields[0]?.value || ''; // Use first item's value or empty string if no value
     setItemName(firstItemValue); // Store the item name
     setShowNewForm(true); // Show the new form
+
   };
 
   return (
@@ -35,14 +36,14 @@ export default function Form() {
           <div className="form-field">
             <label>
               Name:
-              <input type="text" name="name" />
+              <input type="text" name="name" value={name} onChange={(e) =>setName(e.target.value) }/>
             </label>
           </div>
 
           <div className="form-field">
             <label>
               Email:
-              <input type="email" name="email" />
+              <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </label>
           </div>
 
@@ -80,10 +81,10 @@ export default function Form() {
               <p><strong>Name:</strong> {name}</p>
               <p><strong>Email:</strong> {email}</p>
           </div>
-          <h2>Ingredients for: {itemName}</h2> {/* Display the item name here */}
+          <h2>{itemName}</h2> {/* Display the item name here */}
           <div className="form-field">
             <label>
-              New Information:
+              Ingredients:
               <input type="text" name="newInfo" />
             </label>
           </div>
@@ -92,6 +93,12 @@ export default function Form() {
             <div className="button-wrapper">
               <button type="button" onClick={() => setShowNewForm(false)} className="finding-button">
                 Go Back
+              </button>
+            </div>
+            <div className="button-wrapper"> {/*onClick-{()=> event that put all ingreditent to email}*/}
+              <button type="button" 
+              className="sending-button">
+                Print Ingredients
               </button>
             </div>
           </div>

@@ -3,11 +3,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+
 .form-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-top: 1in;
+  position: relative; /* Allow absolute positioning of the info box */
 }
 
 .form-content {
@@ -30,14 +32,12 @@ body {
 
 label {
   margin-right: 10px; 
-   text-align: left; 
-  margin-right: 10px;
+  text-align: left; 
 }
 
 input {
   width: 100%;
   max-width: 200px;
-
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -55,7 +55,6 @@ input {
   margin-right: 10px;
 }
 
-
 .finding-button {
   padding: 8px 12px;
   background-color: #45a049;
@@ -66,16 +65,30 @@ input {
 }
 
 .finding-button:hover {
-  background-color:#0b7dda ;
+  background-color: #0b7dda;
 }
 
-info-box {
-  position: right;
+.sending-button {
+  padding: 8px 12px;
+  background-color: #45a049;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sending-button:hover {
+  background-color: #0b7dda;
+}
+
+/* The box displaying Name and Email in the upper-right corner */
+.info-box {
+  position: absolute;
   top: 20px;
   right: 20px;
-  background-color: rgba(161, 224, 25, 0.8); /* Light background */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background */
   padding: 10px;
-  border: 1px solid #1e0505;
+  border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
