@@ -54,28 +54,28 @@ export default function Form() {
        
         <div className="form-field">
           <label>
-            ZipCode:
-            <input type="text" name="name" />
-          </label>
-        </div>
-       
-        <div className="form-field">
-          <label>
-            Item:
+            Zip Code:
             <input type="text" name="name" />
           </label>
         </div>
         {fields.map((field) => (
           <div key={field.id} className="form-field">
             <label>
-              Additional Info:
+            Item:
+            <input type="text" name="name" 
+            value={field.value}
+            onChange={(e) => handleInputChange(field.id, e)}
+            />
+          </label>
+          <label>
+              Quantity:
               <input
                 type="text"
                 value={field.value}
                 onChange={(e) => handleInputChange(field.id, e)}
               />
             </label>
-          </div>
+        </div>
         ))}
         
         <button type="button" onClick={addField} className="add-field-button">

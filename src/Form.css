@@ -45,10 +45,13 @@ input {
   background-color: #fff9c4;
 }
 .add-field-button {
+  position: sticky;
+  bottom: 0;
+  background-color: #45a049; /* Optional: Background to ensure visibility */
   margin-top: 10px;
-  float: right; /* Aligns the button to the right */
-  padding: 8px 12px;
-  background-color: ##0b7dd;
+  /*float: right; /* Aligns the button to the right */
+  padding: 12px 12px;
+  /*background-color: ##0b7dd;*/
   color: white;
   border: none;
   border-radius: 4px;
@@ -70,5 +73,5 @@ input {
 }
 
 .submit-button:hover {
-  background-color:#45a049 ;
+  background-color:#0b7dda ;
 }
