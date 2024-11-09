@@ -6,6 +6,10 @@ export default function Form() {
   const [itemName, setItemName] = useState(''); // State to store the item name for the newform
   const [name, setName] = useState(''); // State to store the name
   const [email, setEmail] = useState(''); // State to store the email
+  const [ingredients, setIngredients] = useState([]);
+
+  const testData = [{name: 'Pizza', price: 500}, {name: 'Mac and cheese', price: 2.50}]
+  
   
   const addField = () => {
     setFields([...fields, { id: fields.length + 1, value: '' }]);
@@ -18,12 +22,26 @@ export default function Form() {
     setFields(updatedFields);
   };
 
-  const handleFindIngredientsClick = () => {
+  const handleFindIngredientsClick = async () => {
     // Set the first item's value as the item name for the new form
     const firstItemValue = fields[0]?.value || ''; // Use first item's value or empty string if no value
     setItemName(firstItemValue); // Store the item name
     setShowNewForm(true); // Show the new form
-
+    try {
+      const response = await fetch(`${process.env.PUBLIC_URL}/ingredients.txt`);
+      const text = await response.text();
+      
+      // Process each line and split into objects
+      const lines = text.split('\n').filter(line => line.trim() !== '');
+      const ingredientsArray = lines.map(line => {
+        const [name, price] = line.split(','); // Assuming name and price are separated by a comma
+        return { name: name.trim(), price: parseFloat(price.trim()) };
+      });
+      
+      setIngredients(ingredientsArray);
+    } catch (error) {
+      console.error('Error fetching ingredients:', error);
+    }
   };
 
   return (
@@ -85,7 +103,14 @@ export default function Form() {
           <div className="form-field">
             <label>
               Ingredients:
-              <input type="text" name="newInfo" />
+              <ul>
+              {ingredients.map((ingredient, index) => (
+              <li key={index}>
+              {ingredient.name} - ${ingredient.price.toFixed(2)}
+               </li>
+               ))}
+              </ul>
+              {/* <input type="text" name="newInfo" /> */}
             </label>
           </div>
           
