@@ -4,8 +4,6 @@ export default function Form() {
   const [fields, setFields] = useState([{ id: 1, value: '' }]); // Initial field
   const [showNewForm, setShowNewForm] = useState(false); // State to control which form to display
   const [itemName, setItemName] = useState(''); // State to store the item name for the new form
-  const [name, setName] = useState(''); // State to store the name
-  const [email, setEmail] = useState(''); // State to store the email
 
   const addField = () => {
     setFields([...fields, { id: fields.length + 1, value: '' }]);
@@ -27,40 +25,21 @@ export default function Form() {
 
   return (
     <div className="form-container">
-      {/* Box displaying Name and Email */}
-      <div className="info-box">
-        <p><strong>Name:</strong> {name}</p>
-        <p><strong>Email:</strong> {email}</p>
-      </div>
-
       {!showNewForm ? (
         // The initial form
         <form className="form-content">
           <h2>Recepie Finder</h2>
-          
-          {/* Name input */}
           <div className="form-field">
             <label>
               Name:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)} // Update name state
-              />
+              <input type="text" name="name" />
             </label>
           </div>
 
-          {/* Email input */}
           <div className="form-field">
             <label>
               Email:
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} // Update email state
-              />
+              <input type="email" name="email" />
             </label>
           </div>
 
@@ -78,11 +57,6 @@ export default function Form() {
           ))}
 
           <div className="button-container">
-            <div className="button-wrapper">
-              <button type="button" onClick={addField} className="add-field-button">
-                Add Item
-              </button>
-            </div>
             <div className="button-wrapper">
               <button
                 type="button"
