@@ -67,15 +67,7 @@ export default function Form() {
             onChange={(e) => handleInputChange(field.id, e)}
             />
           </label>
-          <label>
-              Quantity:
-              <input
-                type="text"
-                value={field.value}
-                onChange={(e) => handleInputChange(field.id, e)}
-              />
-            </label>
-        </div>
+         </div>
         ))}
          <div className="button-container">
           <div className="button-wrapper">
