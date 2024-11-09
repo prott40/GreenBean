@@ -44,6 +44,18 @@ input {
   box-sizing: border-box;
   background-color: #fff9c4;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-wrapper {
+  /* Optional: you can adjust this to create more precise spacing */
+  margin-right: 10px;
+}
+
 .add-field-button {
   margin-top: 20px;
   padding: 8px 12px;

@@ -77,11 +77,18 @@ export default function Form() {
             </label>
         </div>
         ))}
-        
-        <button type="button" onClick={addField} className="add-field-button">
-          Add Item
-        </button>
-        <button type="submit" className="submit-button">Submit</button>
+         <div className="button-container">
+          <div className="button-wrapper">
+            <button type="button" onClick={addField} className="add-field-button">
+              Add Item
+            </button>
+          </div>
+          <div className="button-wrapper">
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
