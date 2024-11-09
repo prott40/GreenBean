@@ -30,34 +30,6 @@ export default function Form() {
             <input type="email" name="email" />
           </label>
         </div>
-        
-        <div className="form-field">
-          <label>
-            Address Num:
-            <input type="text" name="name" />
-          </label>
-        </div>
-       
-        <div className="form-field">
-          <label>
-            City:
-            <input type="text" name="name" />
-          </label>
-        </div>
-       
-        <div className="form-field">
-          <label>
-            State:
-            <input type="text" name="name" />
-          </label>
-        </div>
-       
-        <div className="form-field">
-          <label>
-            Zip Code:
-            <input type="text" name="name" />
-          </label>
-        </div>
         {fields.map((field) => (
           <div key={field.id} className="form-field">
             <label>
@@ -72,13 +44,8 @@ export default function Form() {
         ))}
          <div className="button-container">
           <div className="button-wrapper">
-            <button type="button" onClick={addField} className="add-field-button">
-              Add Item
-            </button>
-          </div>
-          <div className="button-wrapper">
-            <button type="submit" className="submit-button">
-              Submit
+            <button type="find" className="finding-button">
+              Find Ingredients
             </button>
           </div>
         </div>
