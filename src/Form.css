@@ -70,7 +70,7 @@ input {
 }
 
 info-box {
-  position: absolute;
+  position: right;
   top: 20px;
   right: 20px;
   background-color: rgba(161, 224, 25, 0.8); /* Light background */

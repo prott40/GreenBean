@@ -28,11 +28,6 @@ export default function Form() {
   return (
     
     <div className="form-container">
-      {/* Box displaying Name and Email */}
-      <div className="info-box">
-        <p><strong>Name:</strong> {name}</p>
-        <p><strong>Email:</strong> {email}</p>
-      </div>
       {!showNewForm ? (
         // The initial form
         <form className="form-content">
@@ -78,7 +73,13 @@ export default function Form() {
         </form>
       ) : (
         // The new form to show after button press
+        
         <form className="form-content">
+          {/* Box displaying Name and Email */}
+          <div className="info-box">
+              <p><strong>Name:</strong> {name}</p>
+              <p><strong>Email:</strong> {email}</p>
+          </div>
           <h2>Ingredients for: {itemName}</h2> {/* Display the item name here */}
           <div className="form-field">
             <label>
