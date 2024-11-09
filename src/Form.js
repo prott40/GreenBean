@@ -61,13 +61,14 @@ export default function Form() {
         {fields.map((field) => (
           <div key={field.id} className="form-field">
             <label>
-            Item:
-            <input type="text" name="name" 
-            value={field.value}
-            onChange={(e) => handleInputChange(field.id, e)}
-            />
-          </label>
-         </div>
+              Item:
+              <input
+                type="text"
+                value={field.value}
+                onChange={(e) => handleInputChange(field.id, e)}
+              />
+            </label>
+          </div>
         ))}
          <div className="button-container">
           <div className="button-wrapper">
