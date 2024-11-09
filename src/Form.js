@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 export default function Form() {
   const [fields, setFields] = useState([{ id: 1, value: '' }]); // Initial field
   const [showNewForm, setShowNewForm] = useState(false); // State to control which form to display
+  const [itemName, setItemName] = useState(''); // State to store the item name for the new form
 
   const addField = () => {
     setFields([...fields, { id: fields.length + 1, value: '' }]);
@@ -16,8 +17,10 @@ export default function Form() {
   };
 
   const handleFindIngredientsClick = () => {
-    // Change the state to show the new form when the button is clicked
-    setShowNewForm(true);
+    // Set the first item's value as the item name for the new form
+    const firstItemValue = fields[0]?.value || ''; // Use first item's value or empty string if no value
+    setItemName(firstItemValue); // Store the item name
+    setShowNewForm(true); // Show the new form
   };
 
   return (
@@ -55,11 +58,6 @@ export default function Form() {
 
           <div className="button-container">
             <div className="button-wrapper">
-              <button type="button" onClick={addField} className="add-field-button">
-                Add Item
-              </button>
-            </div>
-            <div className="button-wrapper">
               <button
                 type="button"
                 onClick={handleFindIngredientsClick}
@@ -73,7 +71,7 @@ export default function Form() {
       ) : (
         // The new form to show after button press
         <form className="form-content">
-          <h2>New Form</h2>
+          <h2>Ingredients for: {itemName}</h2> {/* Display the item name here */}
           <div className="form-field">
             <label>
               New Information:
